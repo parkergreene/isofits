@@ -1,50 +1,56 @@
 import pandas as pd
+import math
 
 df = pd.read_csv('iso_holes.csv')
 
-#print(df.head())
+#size = 130
+#fit = 'E6'
 
-#rows_to_delete = [0, 3]
-#
-#for item in rows_to_delete:
-#    df = df.drop(item)
-#
+row_names = df.iloc[:,0].tolist()
 
-#print(df.head())
-print(df)
+list_dict = {}
+for n in range(len(row_names)): 
+    list_dict[row_names[n]] = df.iloc[n, 1:].tolist()
 
-size = 8
-fit = 'H6'
+def find_size_index(list_dict, size):
+    indices = []
+    for index, (over, inc) in enumerate(zip(list_dict['over'], list_dict['inc.'])):
+        if size > int(over) and size <= int(inc):
+            #print('True')
+            indices.append(True)
+            return index
+        else:
+            #print('False')
+            indices.append(False)
 
-print(df.iloc[0])
+#print(find_size_index(list_dict, size))
 
+def find_tol(list_dict, size_index, fit, side):
+    ans = list_dict[fit][size_index]
+    print(ans)
 
-#column_values = df.iloc[:,0].tolist()
-#print(column_values) 
+    if ans == 'nan':
+        raise ValueError('there is nothing there')
 
-#df = df.apply(pd.to_numeric, errors='coerce')
+    upper = int(ans.split('\n')[0])
+    lower = int(ans.split('\n')[1])
+    if side == 'upper':
+        return upper
+    elif side == 'lower':
+        return lower
+    elif side == 'both':
+        return upper, lower
+    else:
+        raise 'side must be upper, lower, or both'
 
-#print((df.iloc[0] < size) & size <= df.iloc[1])
+def hole_tol(size, fit, side):
+    """Returns ISO tolerance of hole
+    
+    Parameters:
+    size (float): Size of hole in mm
+    fit (str): ISO fit class of hole
+    side (str): Select from tolerance band upper, lower, or both
+    """
+    return find_tol(list_dict, find_size_index(list_dict,size), fit, side)
 
-
-#df.iloc[2, df.columns[1:]] = pd.to_numeric(df.iloc[2, df.columns[1:]], errors='coerce')
-
-
-#row_name = df.iloc[0][0]
-#print(row_name)
-#df.iloc[0] = pd.to_numeric(df.iloc[0], errors='coerce')
-#df.iloc[0][0] = 'over'
-#
-#print(df.iloc[0][0])
-
-#print(type(df.iloc[0][2]))
-
-#print(df.iloc[4][2])
-
-print(df.head())
-
-#col = (df.loc['over'] < size) & (size <= df.loc['inc.'])
-#
-#results = col[col].index[0]
-#
-#print(results)
+print(hole_tol(150, 'J7', 'both'))
