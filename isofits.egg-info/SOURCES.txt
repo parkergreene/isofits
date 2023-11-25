@@ -1,7 +1,0 @@
-LICENSE
-README.md
-setup.py
-isofits.egg-info/PKG-INFO
-isofits.egg-info/SOURCES.txt
-isofits.egg-info/dependency_links.txt
-isofits.egg-info/top_level.txt
