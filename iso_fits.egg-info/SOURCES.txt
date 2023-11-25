@@ -1,0 +1,7 @@
+LICENSE
+README.md
+setup.py
+iso_fits.egg-info/PKG-INFO
+iso_fits.egg-info/SOURCES.txt
+iso_fits.egg-info/dependency_links.txt
+iso_fits.egg-info/top_level.txt
