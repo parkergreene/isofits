@@ -24,3 +24,13 @@ def find_tol(list_dict, size_index, fit, side):
         return upper, lower
     else:
         raise 'side must be upper, lower, or both'
+
+#check if users fit input is valid 
+def check_fit_input(body, fit_input):
+    fit_lst = list(body.keys())
+    fit_lst.pop(0)
+    fit_lst.pop(0)
+    if fit_input in fit_lst:
+        return
+    else:
+        raise ValueError('Invalid fit input. Enter valid ISO fit class')
