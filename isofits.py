@@ -1,6 +1,7 @@
 from src.module import *
 from src.data import hole_data
 from src.data import shaft_data
+import sys
 
 #Find iso tolerance
 def isofit(body, size, fit, side):
@@ -19,6 +20,7 @@ def isofit(body, size, fit, side):
     else:
         raise ValueError('body must be hole or shaft')
     
-    return find_tol(body, find_size_index(body,size), fit, side)
-
-
+    if 3 <= size <= 400:
+        return find_tol(body, find_size_index(body,size), fit, side)
+    else:
+        raise ValueError('Invalid size, enter in range [3, 400]')

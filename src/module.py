@@ -14,8 +14,8 @@ def find_size_index(list_dict, size):
 def find_tol(list_dict, size_index, fit, side):  
     
     ans = list_dict[fit][size_index]
-    upper = int(ans.split('\n')[0])
-    lower = int(ans.split('\n')[1])
+    upper = float(ans.split('\n')[0])
+    lower = float(ans.split('\n')[1])
     if side == 'upper':
         return upper
     elif side == 'lower':
@@ -25,11 +25,15 @@ def find_tol(list_dict, size_index, fit, side):
     else:
         raise 'side must be upper, lower, or both'
 
+def create_fit_lst(body_data):
+    fit_lst = list(body_data.keys())
+    fit_lst.pop(0)
+    fit_lst.pop(0)
+    return fit_lst
+
 #check if users fit input is valid 
-def check_fit_input(body, fit_input):
-    fit_lst = list(body.keys())
-    fit_lst.pop(0)
-    fit_lst.pop(0)
+def check_fit_input(body_data, fit_input):
+    fit_lst = create_fit_lst(body_data)
     if fit_input in fit_lst:
         return
     else:
