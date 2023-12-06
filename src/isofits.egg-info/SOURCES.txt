@@ -1,0 +1,10 @@
+LICENSE
+README.md
+pyproject.toml
+src/__init__.py
+src/data.py
+src/module.py
+src/isofits.egg-info/PKG-INFO
+src/isofits.egg-info/SOURCES.txt
+src/isofits.egg-info/dependency_links.txt
+src/isofits.egg-info/top_level.txt

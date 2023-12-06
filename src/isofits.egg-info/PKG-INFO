@@ -1,0 +1,16 @@
+Metadata-Version: 2.1
+Name: isofits
+Version: 0.0.1
+Summary: A package for calculating iso hole/shaft tolerances
+Author-email: Parker Greene <parkergreene16@gmail.com>
+Project-URL: Homepage, https://github.com/pgreene16/isofits
+Project-URL: Issues, https://github.com/pgreene16/isofits/issues
+Classifier: Programming Language :: Python :: 3
+Classifier: License :: OSI Approved :: MIT License
+Classifier: Operating System :: OS Independent
+Requires-Python: >=3.8
+Description-Content-Type: text/markdown
+License-File: LICENSE
+
+# iso-fits
+Python module for calculating hole/shaft tolerances per ISO 286-1
