@@ -1,7 +1,6 @@
 LICENSE
 README.md
 pyproject.toml
-src/__init__.py
 src/data.py
 src/module.py
 src/isofits.egg-info/PKG-INFO
