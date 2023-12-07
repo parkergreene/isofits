@@ -1,5 +1,4 @@
-import pytest
-from isofits import * 
+from src.isofits import * 
 from src.module import create_fit_lst
 from src.data import hole_data
 from src.data import shaft_data

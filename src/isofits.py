@@ -1,6 +1,6 @@
-from src.module import *
-from src.data import hole_data
-from src.data import shaft_data
+from module import *
+from data import hole_data
+from data import shaft_data
 import sys
 
 #Find iso tolerance
