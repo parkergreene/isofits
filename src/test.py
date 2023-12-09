@@ -1,7 +1,7 @@
-from src.isofits import * 
-from src.module import create_fit_lst
-from src.data import hole_data
-from src.data import shaft_data
+from isofits import * 
+from module import create_fit_lst
+from data import hole_data
+from data import shaft_data
 import numpy as np
 
 def test_isotol(n):
@@ -17,8 +17,10 @@ def test_isotol(n):
         ans = isotol(body,size,fit,'both')
         print(f'{body} | {size:0.2f} | {fit} | both --> {ans}')
 
-#test_isotol(1000)
+test_isotol(1000)
 
-isofit(10, 'H7', 'h6')
+print(isofit(10, 'H7', 'h6'))
 
 isoreport(10, 'H7', 'h6')
+
+print(isofit(10, 'H6', 'p6'))

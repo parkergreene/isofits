@@ -37,4 +37,8 @@ def check_fit_input(body_data, fit_input):
     if fit_input in fit_lst:
         return
     else:
-        raise ValueError('Invalid fit input. Enter valid ISO fit class')
+        raise ValueError(f'Invalid fit input ({fit_input}). Enter valid ISO fit class')
+    
+from data import hole_data
+
+#check_fit_input(hole_data, 'p7')
