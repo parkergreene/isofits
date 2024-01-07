@@ -5,6 +5,7 @@ src/__init__.py
 src/data.py
 src/isofits.py
 src/module.py
+src/test.py
 src/isofits.egg-info/PKG-INFO
 src/isofits.egg-info/SOURCES.txt
 src/isofits.egg-info/dependency_links.txt

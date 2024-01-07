@@ -2,3 +2,4 @@ __init__
 data
 isofits
 module
+test
